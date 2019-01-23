@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jared Brutcher.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -46,7 +46,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ###########################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -136,6 +136,19 @@ def run_test_practice_problem3():
     #             that they are adequate tests!
     ###########################################################################
 
+    # Test 15
+    actual = practice_problem3(10, 3, 1.0)
+    expected = [13, 14, 19]
+    print('Test 15')
+    print('Expected: ', expected)
+    print('Actual: ', actual)
+
+    # Test 16
+    actual = practice_problem3(20, 3, 0.0)
+    expected = [20, 21, 25]
+    print('Test 16')
+    print('Expected: ', expected)
+    print('Actual: ', actual)
 
 def practice_problem3(start, n, threshold):
     """
@@ -209,7 +222,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ###########################################################################
@@ -218,6 +231,15 @@ def practice_problem3(start, n, threshold):
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
 
+    returned_list = []
+    ind = start
+    while True:
+        if math.sin(ind) + math.cos(ind) > threshold:
+            returned_list += [ind]
+        if len(returned_list) == n:
+            break
+        ind += 1
+    return returned_list
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
